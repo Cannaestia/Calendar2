@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Work Day Scheduler</title>
+</head>
+
+<body>
+  <header class="jumbotron">
+    <h1 class="display-3">Work Day Scheduler</h1>
+    <p class="lead">A simple calendar app for scheduling your work day</p>
+    <p id="currentDay" class="lead"></p>
+  </header>
+  <div class="container">
+    <div data-id="9am"  class="row">
+      <div class="col-1 text-center pt-4">9am</div>
+      <textarea class="col-10 appt"></textarea>
+      <button class="col-1 save"><i class="fas fa-save"></i></button>
+    </div>
+    <div data-id="10am" class="row">
+      <div class="col-1 text-center pt-4">10am</div>
+      <textarea class="col-10 appt"></textarea>
+      <button class="col-1 save"><i class="fas fa-save"></i></button>
+    </div>
+    <div data-id="11am" class="row">
+      <div class="col-1 text-center pt-4">11am</div>
+      <textarea class="col-10 appt"></textarea>
+      <button class="col-1 save"><i class="fas fa-save"></i></button>
+    </div>
+    <div data-id="12pm" class="row">
+      <div class="col-1 text-center pt-4">12pm</div>
+      <textarea class="col-10 appt"></textarea>
+      <button class="col-1 save"><i class="fas fa-save"></i></button>
+    </div>
+    <div data-id="1pm" class="row">
+      <div class="col-1 text-center pt-4">1pm</div>
+      <textarea class="col-10 appt"></textarea>
+      <button class="col-1 save"><i class="fas fa-save"></i></button>
+    </div>
+    <div data-id="2pm" class="row">
+      <div class="col-1 text-center pt-4">2pm</div>
+      <textarea class="col-10 appt"></textarea>
+      <button class="col-1 save"><i class="fas fa-save"></i></button>
+    </div>
+    <div data-id="3pm" class="row">
+      <div class="col-1 text-center pt-4">3pm</div>
+      <textarea class="col-10 appt"></textarea>
+      <button class="col-1 save"><i class="fas fa-save"></i></button>
+    </div>
+    <div data-id="4pm" class="row">
+      <div class="col-1 text-center pt-4">4pm</div>
+      <textarea class="col-10 appt"></textarea>
+      <button class="col-1 save"><i class="fas fa-save"></i></button>
+    </div>
+    <div data-id="5pm" class="row">
+      <div class="col-1 text-center pt-4">5pm</div>
+      <textarea class="col-10 appt"></textarea>
+      <button class="col-1 save"><i class="fas fa-save"></i></button>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+    $('.container').on('click', '.save', function(){
+      var parentId = $(this).parent().attr('data-id');
+      var appt = $(this).prev().val();
+      console.log(appt);
+      localStorage.setItem(parentId, appt);
+    });
+
+    $('.appt').each(function(){
+      var parentId = $(this).parent().attr('data-id');
+      var appt = localStorage.getItem(parentId);
+      $(this).val(appt);
+    })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+</body>
+
+</html>
