@@ -17,13 +17,12 @@ $('.container').on('click', '.save', function(){
 $('textarea').each(function(){
     var currentTime = moment().format('HH');
     var dataID = $(this).attr('data-hour');
-    if (currentTime < dataID) {
-       $(this).attr("class", "past");
-    } else if (currentTime === dataID) {
-        $(this).attr("class","present");
-    } else if (currentTime > dataID) {
-        $(this).attr("class","future");
+    if (currentTime === dataID) {
+        $(this).attr("class", "present");
+    } else if (currentTime < dataID) {
+        $(this).attr("class", "future");
+    } else {
+        $(this).attr("class", "past");
     }
-    console.log(currentTime);
 
-})
+});
