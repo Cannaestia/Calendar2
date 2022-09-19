@@ -21,7 +21,7 @@ Add in scheduled item into the text box and hit save to save the event.
 
 ## Links
 GitHub: https://github.com/Cannaestia/Calendar2
-Live Link: 
+Live Link: https://cannaestia.github.io/Calendar2/
 
 ## Roadmap
 - Better coloring
